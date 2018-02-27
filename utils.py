@@ -58,7 +58,8 @@ def preprocess(path, scale=3):
   (width, height) = scaled_image.size
   input_ = np.array(list(scaled_image.getdata())).astype(np.float).reshape((height, width))
 
-  return input_, label_
+  # I think the cropped_image should be returned as cropped image.
+  return input_, cropped_image
 
 def prepare_data(sess, dataset):
   """
